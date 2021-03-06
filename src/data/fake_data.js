@@ -246,7 +246,7 @@ export default {
 		{
 		  "date": "9/29/2020",
 		  "amount": 1600,
-		  "category": "income"
+		  "category": "wellfare"
 		},
 		{
 		  "date": "9/29/2020",
@@ -266,7 +266,7 @@ export default {
 		{
 		  "date": "9/29/2020",
 		  "amount": 1600,
-		  "category": "income"
+		  "category": "wellfare"
 		},
 		{
 		  "date": "9/29/2020",
@@ -287,7 +287,7 @@ export default {
 		{
 		  "date": "10/29/2020",
 		  "amount": 1600,
-		  "category": "income"
+		  "category": "wellfare"
 		},
 		{
 		  "date": "10/29/2020",
@@ -307,7 +307,7 @@ export default {
 		{
 		  "date": "10/29/2020",
 		  "amount": 1600,
-		  "category": "income"
+		  "category": "wellfare"
 		},
 		{
 		  "date": "10/29/2020",
@@ -328,7 +328,7 @@ export default {
 		{
 		  "date": "11/29/2020",
 		  "amount": 1600,
-		  "category": "income"
+		  "category": "wellfare"
 		},
 		{
 		  "date": "11/29/2020",
@@ -348,7 +348,7 @@ export default {
 		{
 		  "date": "11/29/2020",
 		  "amount": 1600,
-		  "category": "income"
+		  "category": "wellfare"
 		},
 		{
 		  "date": "11/29/2020",
@@ -369,7 +369,7 @@ export default {
 		{
 		  "date": "12/29/2020",
 		  "amount": 1600,
-		  "category": "income"
+		  "category": "wellfare"
 		},
 		{
 		  "date": "12/29/2020",

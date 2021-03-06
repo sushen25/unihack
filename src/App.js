@@ -10,10 +10,16 @@ function App() {
   return (
     <div className="container">
       <Router>
+<<<<<<< HEAD
         <Route path="/" component={Overview} exact />
         <Route path="/improvement" component={PotentialInvestments} exact />
         <Route path="/goals" component={GoalSetting} exact />
         <Route path="/monthlyoverview" component={MonthlyOverview} exact />
+=======
+        <Route path="/overview" component={Overview} exact/>
+        <Route path="/improvement" component={PotentialInvestments} exact/>
+        <Route path="/goals" component={GoalSetting} exact/>
+>>>>>>> 366f5bbe0e07d7a23f17b6472f28eefdd6449360
       </Router>
     </div>
   );
