@@ -37,7 +37,7 @@ class ExpenseIncome extends React.Component {
 
         return(
             <div>
-                <h1>Expense Detail</h1>
+                <h1>{this.props.title} Detail</h1>
 
                 <div className="row">
                     <div className="col-6">
