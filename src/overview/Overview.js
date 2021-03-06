@@ -90,43 +90,42 @@ class Overview extends React.Component {
         this.setState({detail: detail_page})
     }
 
+    setStartDate = () => {
+        
+    }
 
     render() {
-        // REAL START
         const data = this.getData();
 
-        if(this.state.detail === "expense") {
-            return (
-                <div>
-                    <div className="row">
-                        <button onClick={event => this.detailButton(event, "expense")}>Expense Detail</button>
-                        <button onClick={event => this.detailButton(event, "income")}>Income Detail</button>
-                    </div>
-                    <ExpenseIncome title="Expense" transaction_list={data.transaction_list} pie_chart_data={data.expense_data}/>
-                </div>
-                    
-            );
-        } else if(this.state.detail === "income") {
-            return(
-                <div>
-                    <div className="row">
-                        <button onClick={event => this.detailButton(event, "expense")}>Expense Detail</button>
-                        <button onClick={event => this.detailButton(event, "income")}>Income Detail</button>
-                    </div>
-                    <ExpenseIncome title="Income" transaction_list={data.transaction_list} pie_chart_data={data.expense_data}/>
-                </div>
-            );
-        } else {
-            return(
-                <div>
-                    <div className="row">
-                        <button onClick={event => this.detailButton(event, "expense")}>Expense Detail</button>
-                        <button onClick={event => this.detailButton(event, "income")}>Income Detail</button>
-                    </div>
-                    <div>Select a Detail Page</div>
-                </div>
-            );
+        var detail_page = <p>Select Data</p>
+
+        if(this.state.detail === "expense" || this.state.detail === "income") {
+            detail_page = <ExpenseIncome title={this.state.detail} transaction_list={data.transaction_list} pie_chart_data={data.expense_data}/>
         }
+
+        return (
+            <div>
+                <div className="row">
+                    <div className="col-6">
+                        <h4>Start Date: </h4>
+                        <input type="date" />
+                    </div>
+                    <div className="col-6">
+                        <h4>End Date: </h4>
+                        <input type="date" />
+                    </div>
+                </div>
+                <div className="row mt-3">
+                    <div className="col-6">
+                        <button className="mr-3" onClick={event => this.detailButton(event, "expense")}>Expense Detail</button>
+                        <button onClick={event => this.detailButton(event, "income")}>Income Detail</button>
+                    </div>
+
+                </div>
+                {detail_page}
+            </div>
+                
+        );
         
     }
 }

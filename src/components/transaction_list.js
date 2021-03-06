@@ -5,7 +5,6 @@ class TransactionList extends React.Component {
     
     render() {
         const transactions = this.props.list_items;
-        console.log(transactions)
         var renderedTransactions = (<p>No data</p>)
         if(transactions) {
             renderedTransactions = transactions.map((transaction) => {
