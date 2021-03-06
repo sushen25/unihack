@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="container">
       <Router>
-        <Route path="/" component={Overview} exact/>
+        <Route path="/overview" component={Overview} exact/>
         <Route path="/improvement" component={PotentialInvestments} exact/>
         <Route path="/goals" component={GoalSetting} exact/>
       </Router>
