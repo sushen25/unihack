@@ -1,15 +1,25 @@
 import React from "react"
-import { Doughnut, Line } from "react-chartjs-2"
 import fake_data from "../data/fake_data"
 
 import ExpenseIncome from './ExpenseIncome'
 
 class Overview extends React.Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            detail: "",
+            transaction_list: []
+        }
+    }
+
     getData = () => {
         const fakeData = fake_data
         const state = {
             "balance_over_time": this.balanceOverTimeData(fakeData.balance, fakeData.transactions),
-            "expense_data": this.expenseDetailData(fake_data.transactions)
+            "expense_data": this.factorCatergoryData(fake_data.transactions),
+            "transaction_list": this.transactionListData(fake_data.transactions)
         }
 
         return state;
@@ -33,7 +43,7 @@ class Overview extends React.Component {
         return state;
     }
 
-    expenseDetailData = (transactions) => {
+    factorCatergoryData = (transactions) => {
         const catergoryAmount = {};
 
         for(var i = 0; i < transactions.length; i++) {
@@ -59,8 +69,21 @@ class Overview extends React.Component {
             }
         }
 
-        console.log(catergoryAmount)
         return catergoryAmount;
+    }
+
+    transactionListData(transactions) {
+        const state = []
+        for(var i = 0; i < transactions.length; i++) {
+            const transaction = transactions[i]
+            if(this.state.detail == "expense" && transaction.amount < 0) {
+                state.push(transaction)
+            } else if (this.state.detail == "income" && transaction.amount > 0) {
+                state.push(transaction)
+            }
+        }
+
+        return state;
     }
 
     detailButton = (event, detail_page) => {
@@ -70,36 +93,29 @@ class Overview extends React.Component {
 
     render() {
         // REAL START
-        this.expenseDetailData(fake_data.transactions)
+        const data = this.getData();
 
-        const data = this.getData()
-
-
-        if(this.state) {
-            if(this.state.detail === "expense") {
-                return (
-                    <div>
-                        <div className="row">
-                            <button onClick={event => this.detailButton(event, "expense")}>Expense Detail</button>
-                            <button onClick={event => this.detailButton(event, "income")}>Income Detail</button>
-                        </div>
-                        <ExpenseIncome title="Expense" pie_chart_data={data.expense_data}/>
+        if(this.state.detail === "expense") {
+            return (
+                <div>
+                    <div className="row">
+                        <button onClick={event => this.detailButton(event, "expense")}>Expense Detail</button>
+                        <button onClick={event => this.detailButton(event, "income")}>Income Detail</button>
                     </div>
-                        
-                );
-            } else if(this.state.detail === "income") {
-                return(
-                    <div>
-                        <div className="row">
-                            <button onClick={event => this.detailButton(event, "expense")}>Expense Detail</button>
-                            <button onClick={event => this.detailButton(event, "income")}>Income Detail</button>
-                        </div>
-                        <ExpenseIncome title="Income" pie_chart_data={data.expense_data}/>
+                    <ExpenseIncome title="Expense" transaction_list={data.transaction_list} pie_chart_data={data.expense_data}/>
+                </div>
+                    
+            );
+        } else if(this.state.detail === "income") {
+            return(
+                <div>
+                    <div className="row">
+                        <button onClick={event => this.detailButton(event, "expense")}>Expense Detail</button>
+                        <button onClick={event => this.detailButton(event, "income")}>Income Detail</button>
                     </div>
-                );
-    
-    
-            } 
+                    <ExpenseIncome title="Income" transaction_list={data.transaction_list} pie_chart_data={data.expense_data}/>
+                </div>
+            );
         } else {
             return(
                 <div>

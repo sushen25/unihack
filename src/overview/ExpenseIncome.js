@@ -56,7 +56,7 @@ class ExpenseIncome extends React.Component {
                     </div>
                     <div className="col-6">
                         <h4>Transactions: </h4>
-                        <TransactionList list_items={fake_data.transactions}/>
+                        <TransactionList list_items={this.props.transaction_list}/>
                     </div>
                      
                 </div>
