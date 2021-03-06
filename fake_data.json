@@ -1,6 +1,6 @@
-{
+export default {
 	"name": "Sangil Mun",
-	"balance": 2348.00,
+	"balance": 1344.00,
 	"transaction": [
 		{
 			"date": "1/12/2020",
@@ -20,34 +20,47 @@
 		{
 			"date": "10/12/2020",
 			"amount": -6.4,
-			"category": "eating_out"
-
+			"category": "food"
 		},
 		{
 			"date": "11/12/2020",
 			"amount": -128.52,
 			"category": "shopping"
-
 		},
 		{
-			"date": "10/12/2020",
+			"date": "13/12/2020",
 			"amount": -26.48,
-			"category": "eating_out"
-
+			"category": "food"
 		},
-
-
-
-
-
-
-
 		{
-			"date": "1/12/2020",
-			"amount": -5.99,
-			"category": "entertainment"
-
+			"date": "17/12/2020",
+			"amount": -19.9,
+			"category": "shopping"
+		},
+		{
+			"date": "17/12/2020",
+			"amount": -1.6,
+			"category": "food"
+		},
+		{
+			"date": "23/12/2020",
+			"amount": -23.4,
+			"category": "other"
+		},
+		{
+			"date": "24/12/2020",
+			"amount": -25.36,
+			"category": "other"
+		},
+		{
+			"date": "30/12/2020",
+			"amount": 663.59,
+			"category": "income"
+		},
+		{
+			"date": "30/12/2020",
+			"amount": -5.5,
+			"category": "other"
 		}
-
 	]
 }
