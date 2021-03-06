@@ -1,0 +1,53 @@
+{
+	"name": "Sangil Mun",
+	"balance": 2348.00,
+	"transaction": [
+		{
+			"date": "1/12/2020",
+			"amount": 300,
+			"category": "income"
+		},
+		{
+			"date": "1/12/2020",
+			"amount": -5.99,
+			"category": "entertainment"
+		},
+		{
+			"date": "8/12/2020",
+			"amount": 192.05,
+			"category": "income"
+		},
+		{
+			"date": "10/12/2020",
+			"amount": -6.4,
+			"category": "eating_out"
+
+		},
+		{
+			"date": "11/12/2020",
+			"amount": -128.52,
+			"category": "shopping"
+
+		},
+		{
+			"date": "10/12/2020",
+			"amount": -26.48,
+			"category": "eating_out"
+
+		},
+
+
+
+
+
+
+
+		{
+			"date": "1/12/2020",
+			"amount": -5.99,
+			"category": "entertainment"
+
+		}
+
+	]
+}
