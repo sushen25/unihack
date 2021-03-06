@@ -1,6 +1,6 @@
 import React from "react"
 import { Doughnut, Line } from "react-chartjs-2"
-import fake_data from "../fake_data"
+import fake_data from "../data/fake_data"
 
 import ExpenseIncome from './ExpenseIncome'
 
@@ -81,18 +81,16 @@ class Overview extends React.Component {
 
         return (
             <div>
-                <div className="row">
+                {/* <div className="row">
                     <div className="col-6">
                         <Doughnut options={optionsFake} data={dataFake}/>
                     </div>
                     <div className="col-6">
                         <Line data={data.balance_over_time} />
                     </div>
-                </div>
+                </div> */}
 
-                <div className="row">
-                    <ExpenseIncome pie_chart_data={data.expense_data}/>
-                </div>
+                <ExpenseIncome pie_chart_data={data.expense_data}/>
 
                 
             </div>

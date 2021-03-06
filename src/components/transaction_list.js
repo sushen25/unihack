@@ -1,5 +1,5 @@
 import React from 'react';
-import data from './data';
+
 
 class TransactionList extends React.Component {
     
@@ -28,12 +28,9 @@ class TransactionList extends React.Component {
 
         return (
             <div>
-                <h1>TransactionList</h1>
-                <div className="list-group">
-
+                <div style={{height: "500px", overflowY:"scroll"}} className="list-group">
                     {renderedTransactions}
-                    
-                    </div>
+                </div>
             </div>
 
         );
