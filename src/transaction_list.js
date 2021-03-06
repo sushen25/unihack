@@ -1,27 +1,31 @@
 import React from 'react';
-import data from './data'
+import Search from './search';
+import data from './data';
 
 class TransactionList extends React.Component {
     
-    
-    
     render() {
-
         const transactions = this.props.list_items.default;
-        const renderedTransactions = transactions.map((transaction) => {
+        const renderedTransactions = transactions.map((transaction, key) => {
             return(
-                <a href="#" className="list-group-item list-group-item-action" aria-current="true">
-                    <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">To: {transaction.name_transfer_to}</h5>
-                        <small>{transaction.date}</small>
-                        </div>
-                        <p className="mb-1">${transaction.amount}</p>
-                        <small>{transaction.category}</small>
-                    </a>
+                <table className="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">{transaction.date}</th>
+                    <th scope="row">{transaction.category}</th>
+                    <th scope="row">${transaction.amount}</th>
+                  </tr>
+                </tbody>
+              </table>
             );
         });
-
-        console.log(renderedTransactions);
 
         return (
             <div>
