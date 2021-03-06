@@ -6,7 +6,7 @@ class PotentialInvestments extends React.Component {
             <div>
                 <p>INVESTMENTS</p>
             </div>
-        );
+        ); 
         
     }
 }
