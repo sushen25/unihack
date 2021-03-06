@@ -1,5 +1,4 @@
 import React from 'react';
-import Search from './search';
 import data from './data';
 
 class TransactionList extends React.Component {
